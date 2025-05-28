@@ -63,6 +63,16 @@ public class Ex4MediaDeNotas {
            double media2 = media1 / 4;
         
            System.out.println("Média das Notas inseridas: " + media2);
-       }               
+        }               
+
+        if (media2 <= 5.9) {
+            System.out.printl("Você foi Reprovado. Sua Nota Final foi de: " + media2 + " pontos.");
+        }
+
+        if (media2 >= 6) {
+            System.out.println("Parabéns! Você foi Aprovado. Sua Nota Final foi de: " + media2 + " pontos.");
+        }
+
+        scanner.close();
     }
 }

@@ -2,7 +2,7 @@ Trabalhos de TPA
 - Atividade de Comparação com Java Swing:
 <br><hr>
 1.Comparando valores para verificar o lucro:
-<br>
+<br><hr>
 (Exemplo com lucro)
 <br>
 <img width="1920" height="1080" alt="Captura de Tela (1)" src="https://github.com/user-attachments/assets/f12630f5-54bb-4d9e-a68c-4298f2b2db6c" />

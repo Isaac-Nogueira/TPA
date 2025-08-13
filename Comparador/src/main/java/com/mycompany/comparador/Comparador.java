@@ -60,7 +60,5 @@ public class Comparador {
         else {
             JOptionPane.showMessageDialog(null, "Você não pode entrar na área infantil.");
         }
-        
-        
     }
 }

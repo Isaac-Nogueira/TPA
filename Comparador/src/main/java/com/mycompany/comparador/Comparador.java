@@ -6,59 +6,39 @@ package com.mycompany.comparador;
 
 /**
  *
- * @author ISAAC - 1°DS AMS
+ * @author SUDEMIR
  */
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 public class Comparador {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
         
-        //Comparador de valores para saber se houve lucro
-        int valC = 0, valV = 0, dif = 0;
-        valC = Integer.parseInt(JOptionPane.showInputDialog("Qual o valor da Compra do Produto?"));
-        valV = Integer.parseInt(JOptionPane.showInputDialog("Qual o valor da Venda do Produto?"));
-        dif = valV - valC;
+        //Comparador de valores para saber se houve lucro ou perda
+        System.out.println("Insira o valor da Compra do Produto: ");
+        double ValC = scanner.nextDouble();
+        System.out.println("Informe o valor da Venda do Produto: ");
+        double ValV = scanner.nextDouble();
         
-        if (valV > valC) {
-            JOptionPane.showMessageDialog(null, "Houve lucro, com uma diferença de R$" + dif + " do valor da Compra");
+        double Dif = ValV - ValC;
+        
+        if (ValV > ValC) {
+            System.out.println("Houve lucro, com uma diferênca de R$" + Dif + " a mais que o valor da compra do produto.");
         }
         else {
-            JOptionPane.showMessageDialog(null, "Não houve lucro, pois não há uma diferença positiva do valor da Compra.");
+            System.out.println("Não houve lucro, pois há uma diferênca de R$" + Dif + " do valor da compra do produto.");
         }
         
         //Comparando chaves de acesso
-        int chave = 0, senha = 0;
-        chave = Integer.parseInt(JOptionPane.showInputDialog("Insira a senha numérica para acessar:"));
-        senha = 1234;
+        System.out.println("Insira a chave de acesso numérica: ");
+        int chave = scanner.nextInt();
+        
+        int senha = 1234;
         
         if (chave == senha) {
-            JOptionPane.showMessageDialog(null, "Acesso permitido.");
+            System.out.println("Acesso permitido.");
         }
         else {
-            JOptionPane.showMessageDialog(null, "Acesso negado.");
+            System.out.println("Acesso negado");
         }
-        
-        //Verificador de idade mínima
-        int idade = 0, minima = 0;
-        idade = Integer.parseInt(JOptionPane.showInputDialog("Qual a sua idade? (Idade mínima: 16 anos)"));
-        minima = 16;
-        
-        if (idade >= minima) {
-            JOptionPane.showMessageDialog(null, "Você tem idade suficiente para ser contratado. Envie-nos seu Currículo.");
         }
-        else {
-            JOptionPane.showMessageDialog(null, "Você não tem a idade mínima para começar a trabalhar!");
-        }
-        
-        //Verificador de idade máxima
-        int age = 0, maxima = 0;
-        age = Integer.parseInt(JOptionPane.showInputDialog("Qual é a sua Idade em anos? (Máximo: 12 anos)"));
-        maxima = 12;
-        
-        if (age <= 12) {
-            JOptionPane.showMessageDialog(null, "Você pode entrar na área infantil.");
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "Você não pode entrar na área infantil.");
-        }
-    }
 }

@@ -6,39 +6,83 @@ package com.mycompany.comparador;
 
 /**
  *
- * @author SUDEMIR
+ * @author ISAAC - 1°DS AMS
  */
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class Comparador {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner (System.in);
         
-        //Comparador de valores para saber se houve lucro ou perda
-        System.out.println("Insira o valor da Compra do Produto: ");
-        double ValC = scanner.nextDouble();
-        System.out.println("Informe o valor da Venda do Produto: ");
-        double ValV = scanner.nextDouble();
+        //Comparador de valores para saber se houve lucro
+        int valC = 0, valV = 0, dif = 0;
+        valC = Integer.parseInt(JOptionPane.showInputDialog("Qual o valor da Compra do Produto?"));
+        valV = Integer.parseInt(JOptionPane.showInputDialog("Qual o valor da Venda do Produto?"));
+        dif = valV - valC;
         
-        double Dif = ValV - ValC;
-        
-        if (ValV > ValC) {
-            System.out.println("Houve lucro, com uma diferênca de R$" + Dif + " a mais que o valor da compra do produto.");
+        if (valV > valC) {
+            JOptionPane.showMessageDialog(null, "Houve lucro, com uma diferença de R$" + dif + " do valor da Compra");
         }
         else {
-            System.out.println("Não houve lucro, pois há uma diferênca de R$" + Dif + " do valor da compra do produto.");
+            JOptionPane.showMessageDialog(null, "Não houve lucro, pois não há uma diferença positiva do valor da Compra.");
         }
         
         //Comparando chaves de acesso
-        System.out.println("Insira a chave de acesso numérica: ");
-        int chave = scanner.nextInt();
-        
-        int senha = 1234;
+        int chave = 0, senha = 0;
+        chave = Integer.parseInt(JOptionPane.showInputDialog("Insira a senha numérica para acessar:"));
+        senha = 1234;
         
         if (chave == senha) {
-            System.out.println("Acesso permitido.");
+            JOptionPane.showMessageDialog(null, "Acesso permitido.");
         }
         else {
-            System.out.println("Acesso negado");
+            JOptionPane.showMessageDialog(null, "Acesso negado.");
         }
+        
+        //Verificador de idade mínima
+        int idade = 0, minima = 0;
+        idade = Integer.parseInt(JOptionPane.showInputDialog("Qual a sua idade? (Idade mínima: 16 anos)"));
+        minima = 16;
+        
+        if (idade >= minima) {
+            JOptionPane.showMessageDialog(null, "Você tem idade suficiente para ser contratado. Envie-nos seu Currículo.");
         }
+        else {
+            JOptionPane.showMessageDialog(null, "Você não tem a idade mínima para começar a trabalhar!");
+        }
+        
+        //Verificando limite de velocidade
+        int vel = 0, velmax = 0;
+        vel = Integer.parseInt(JOptionPane.showInputDialog("Qual a velocidade? (máximo 90 km/h)"));
+        velmax = 90;
+        
+        if (vel < velmax){
+            JOptionPane.showMessageDialog(null, "Você esteve dentro do limite de velocidade (90 km/h)");
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Você ultrapassou o limite de velocidade (90 km/h).");
+        }
+        
+        //Verificador de idade máxima
+        int age = 0, maxima = 0;
+        age = Integer.parseInt(JOptionPane.showInputDialog("Qual é a sua Idade em anos? (Máximo: 12 anos)"));
+        maxima = 12;
+        
+        if (age <= 12) {
+            JOptionPane.showMessageDialog(null, "Você pode entrar na área infantil.");
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Você não pode entrar na área infantil.");
+        }
+        
+        //Redefinindo uma senha
+        int atual = 0, nova = 0;
+        atual = 1234;
+        nova = Integer.parseInt(JOptionPane.showInputDialog("Insira a nova senha:"));
+        
+        if (atual != nova) {
+            JOptionPane.showMessageDialog(null, "A senha foi redefinida.");
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "As senhas são iguais, portanto, não foi redefinida.");
+        }
+    }
 }
